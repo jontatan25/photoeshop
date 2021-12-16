@@ -1,0 +1,83 @@
+
+
+
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image:
+    url("https://images.unsplash.com/photo-1491466424936-e304919aada7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80")
+}
+
+.flex{
+    display: flex;
+    gap: var(--gap,5rem);
+}
+  
+.primary-header{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.primary-navigation {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.primary-navigation a{
+    text-decoration: none;
+}
+
+.primary-navigation a:visited{
+    color: white;
+}
+
+.primary-navigation a > span {
+    font-weight: 700;
+    margin-inline-end: .5em;
+}
+
+.mobile-nav-toogle {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10;
+}
+.App-logo {
+    height: 10vmin;
+    pointer-events: none;
+    margin: 2rem;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+@media (max-width: 35em){
+    .primary-navigation{
+        --gap: 3em;
+        z-index: 9;
+        position: fixed;
+        inset: 0 0 0 30%;
+
+        background-color: rgba(255, 255, 255, .11);
+        backdrop-filter: blur(1rem);
+
+        flex-direction: column;
+        padding: min(8vh,10rem) 2em;
+    }
+
+}
