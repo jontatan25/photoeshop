@@ -11,22 +11,24 @@ body{
 
 .flex{
     display: flex;
-    gap: var(--gap,5rem);
+    gap: var(--gap,2rem);
+    
 }
   
 .primary-header{
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between
 }
 
 .primary-navigation {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    padding: 0 3rem;
 }
 
 .primary-navigation a{
     text-decoration: none;
+    font-size: 1.3rem;
+    
 }
 
 .primary-navigation a:visited{
@@ -50,6 +52,15 @@ body{
     margin: 2rem;
   }
   
+  .mobileMenu__button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    aspect-ratio: 1;
+    z-index: 10;
+    display: none;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
@@ -67,17 +78,58 @@ body{
   
   
 @media (max-width: 35em){
+
+    .nav__desktop {
+      display: none;
+    }
     .primary-navigation{
         --gap: 3em;
         z-index: 9;
         position: fixed;
-        inset: 0 0 0 30%;
-
-        background-color: rgba(255, 255, 255, .11);
-        backdrop-filter: blur(1rem);
+        inset: 0 0 0 27%;
 
         flex-direction: column;
-        padding: min(8vh,10rem) 2em;
+        padding: min(20vh) 2em;
+
+        background-color: rgba(211, 211, 211, 0.11);
+        backdrop-filter: blur(1rem);
+        margin: 0;
+    }
+    .mobileMenu__button {
+      display: flex;
     }
 
+}
+
+@media (min-width: 35em) and (max-width: 55em){
+  .nav__mobile{
+    display: none;
+  }
+  nav.nav__desktop{
+    
+    background-color: rgba(211, 211, 211, 0.11);
+    backdrop-filter: blur(1rem);
+    border-radius: 12px;
+    margin-right: 5rem;
+    
+  }
+  .App-logo {
+    height: 10vmin;
+    pointer-events: none;
+    margin: 0;
+  }
+  
+}
+
+@media (min-width: 55em){
+  .nav__mobile{
+    display: none;
+  }
+  nav.nav__desktop{
+    background-color: rgba(211, 211, 211, 0.11);
+    backdrop-filter: blur(1rem);
+    border-radius: 12px;
+    margin-right: 3rem;
+  }
+  
 }
