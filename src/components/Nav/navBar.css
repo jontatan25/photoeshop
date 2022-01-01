@@ -1,5 +1,9 @@
 
 
+a.nav__desktop {
+  width: 80px;
+  margin-left: 10px
+}
 
 body{
     background-size: cover;
@@ -17,9 +21,15 @@ body{
   
 .primary-header{
     align-items: center;
-    justify-content: space-between
+    justify-content: space-between;
+    height: 80px
 }
 
+#primary-navigation{
+  height:3em;
+  justify-content:center;
+  align-items: center;
+}
 .primary-navigation {
     list-style-type: none;
     padding: 0 3rem;
@@ -28,6 +38,7 @@ body{
 .primary-navigation a{
     text-decoration: none;
     font-size: 1.3rem;
+    color: white;
     
 }
 
@@ -47,9 +58,10 @@ body{
     z-index: 10;
 }
 .App-logo {
-    height: 10vmin;
+    height: 80px;
     pointer-events: none;
-    margin: 2rem;
+    width: 90px;
+  
   }
   
   .mobileMenu__button {
@@ -95,6 +107,8 @@ body{
         backdrop-filter: blur(1rem);
         margin: 0;
     }
+
+
     .mobileMenu__button {
       display: flex;
     }

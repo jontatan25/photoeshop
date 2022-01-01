@@ -1,0 +1,15 @@
+.counter__container{
+
+    background-color: rgb(37, 155, 209);
+    border: solid 2px rgb(56, 212, 240);
+    width:8rem;
+    display:flex;
+    justify-content:space-around;
+    padding: 0.6em 0;
+    border-radius: 3px;
+}
+
+.counter__container-button{
+    align-items:center;
+    width: 2.1rem;
+}

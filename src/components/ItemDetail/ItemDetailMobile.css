@@ -1,0 +1,15 @@
+.detailMobile-header{
+   display: flex;
+   justify-content:space-between;
+   align-items:center;
+   color: white;
+   margin-bottom: 1rem
+}
+
+.detailMobile-image{
+    background-color:white;
+    height: 15em;
+    border-radius: 4px;
+    margin: 0 auto;
+    width:24em
+}

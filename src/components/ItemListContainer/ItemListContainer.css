@@ -1,0 +1,9 @@
+.item__container{
+    display: flex;
+}
+.item__container-loading{
+    background-color: aqua;
+    height: 50vh;
+    width: 50vh;
+    text-align: center;
+}
