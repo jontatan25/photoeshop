@@ -1,36 +1,36 @@
-import React from "react";
+import { useState, React } from "react";
 import "./ItemDetailProperties.css";
+import Counter from "../../Counter/Counter";
+import AddToCart from "../AddToCart";
 
-const ItemDetailProperties = () => {
+const ItemDetailProperties = ({ item, cart, setCart, id }) => {
+  const [quantity, setQuantity] = useState({
+    stock: 10,
+    amount: 1,
+  });
+
   return (
     <div className="itemDetail__container-right">
-      <p className="itemDetail__container-right-title">Titulo Producto</p>
+      <div className="itemDetail__container-right-title">
+        <p>{item.title}</p>
+      </div>
       <div className="itemDetail__container-right-properties">
-        <p className="itemDetail__container-right-properties-price">Price</p>
-        <p className="itemDetail__container-right-properties-subtitle">
-          Description
+        <p className="itemDetail__container-right-properties-price">
+          ${item.price} USD
         </p>
-
+        <p className="itemDetail__container-right-properties-subtitle">
+          {item.description}
+        </p>
         <p className="itemDetail__container-right-properties-option">Option</p>
-        <ul className="itemDetail__container-right-properties-form">
-          <li>
-            <button>1</button>
-          </li>
-          <li>
-            <button>2</button>
-          </li>
-          <li>
-            <button>3</button>
-          </li>
-          <li>
-            <button>4</button>
-          </li>
-        </ul>
-        <button className="itemDetail__container-right-properties-button">ADD TO CART</button>
-        <h3 className="itemDetail__container-right-properties-footertitle">
-          PRODUCT DESCRIPTION
-        </h3>
-        <p className="itemDetail__container-right-properties-footertext">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus iusto magnam, repellat dolorum quia cupiditate suscipit saepe eligendi alias reprehenderit!</p>
+        <Counter quantity={quantity} setQuantity={setQuantity} />
+        <AddToCart
+          item={item}
+          quantity={quantity}
+          setQuantity={setQuantity}
+          cart={cart}
+          setCart={setCart}
+          id={id}
+        />
       </div>
     </div>
   );

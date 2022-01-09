@@ -3,11 +3,11 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import ItemDetailMobile from "../ItemDetail/ItemDetailMobile";
 import "./ItemDetailContainer.css";
 
-const ItemDetailContainer = ({ data }) => {
+const ItemDetailContainer = ({cart,setCart}) => {
   return (
     <>
       <div className="itemDetail__container">
-        <ItemDetail data={data}/>
+        <ItemDetail cart={cart} setCart={setCart}/>
         {/* <ItemDetailMobile datos={datos} /> */}
       </div>
       

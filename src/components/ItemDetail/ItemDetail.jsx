@@ -4,23 +4,18 @@ import { useParams } from "react-router-dom";
 import "./ItemDetail.css";
 import ItemDetailProperties from "./ItemDetailProperties/ItemDetailProperties";
 
-const ItemDetail = ({ data }) => {
-  const [item, setitem] = useState([]);
+const ItemDetail = ({cart,setCart}) => {
+  let [loadingItem, setloadingItem] = useState(true);
+  const [item, setitem] = useState();
   const { id } = useParams();
 
   let getProducts = async () => {
     try {
       const respuesta = await axios.get(
-        `https://api.pexels.com/v1/photos/${id}`,
-        {
-          headers: {
-            authorization:
-              "563492ad6f91700001000001c3b91d98dbf844c3873f8fd31078f05d",
-          },
-        }
+        `https://fakestoreapi.com/products/${id}`
       );
       setitem(respuesta.data);
-      console.log(respuesta.data);
+      setloadingItem(false);
     } catch (error) {
       console.log(error);
     }
@@ -29,21 +24,29 @@ const ItemDetail = ({ data }) => {
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
     <>
-    
-      <h2 className="itemDetail__container-title"></h2>
-      <div className="itemDetail__container-flex">
-        <div className="itemDetail__container-left">
-          <div className="itemDetail__container-left-bigPhoto">
-            {console.log(item)}
-          </div>
-
-          <div className="itemDetail__container-left-smallPhoto1"></div>
-          <div className="itemDetail__container-left-smallPhoto2"></div>
+      {loadingItem ? (
+        <div className="item__container-loading">
+          <h2>Cargando</h2>
         </div>
-        <ItemDetailProperties data={data} />
-      </div>
+      ) : (
+        <>
+          <h2 className="itemDetail__container-title"></h2>
+          <div className="itemDetail__container-flex">
+            <div className="itemDetail__container-left">
+              <div
+                className="itemDetail__container-left-bigPhoto"
+                style={{ backgroundImage: `url(${item.image})` }}
+              ></div>
+              <div className="itemDetail__container-left-smallPhoto1"></div>
+              <div className="itemDetail__container-left-smallPhoto2"></div>
+            </div>
+            <ItemDetailProperties item={item} cart={cart} setCart={setCart} id={id}/>
+          </div>
+        </>
+      )}
     </>
   );
 };

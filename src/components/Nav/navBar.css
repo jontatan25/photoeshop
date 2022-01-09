@@ -48,7 +48,6 @@ body{
 
 .primary-navigation a > span {
     font-weight: 700;
-    margin-inline-end: .5em;
 }
 
 .mobile-nav-toogle {
@@ -66,7 +65,7 @@ body{
   
   .mobileMenu__button {
     position: absolute;
-    top: 2rem;
+    top: 1.5rem;
     right: 2rem;
     aspect-ratio: 1;
     z-index: 10;
@@ -95,19 +94,28 @@ body{
       display: none;
     }
     .primary-navigation{
-        --gap: 3em;
+
+        --gap: 4em;
         z-index: 9;
         position: fixed;
         inset: 0 0 0 27%;
 
         flex-direction: column;
-        padding: min(20vh) 2em;
+        padding: min(44vh) 2em min(40vh) 2em;
 
-        background-color: rgba(211, 211, 211, 0.11);
-        backdrop-filter: blur(1rem);
-        margin: 0;
+        background-color: rgba(0, 0, 0, 0.281);
+        backdrop-filter: blur(1.5rem);
+        
+        
     }
 
+    .primary-navigation a{
+
+      
+      border-bottom: solid 1px white;
+      padding-bottom: 6px;
+      
+  }
 
     .mobileMenu__button {
       display: flex;

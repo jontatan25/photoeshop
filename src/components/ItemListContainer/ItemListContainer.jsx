@@ -6,7 +6,7 @@ import "./ItemListContainer.css"
 const ItemListContainer = ({data}) => {
 
     
-    const [loading, setloading] = useState(true)
+    let [loading, setloading] = useState(true)
 
     const asyncSimulation = new Promise((resolve, reject) => {
         setTimeout(() =>{
